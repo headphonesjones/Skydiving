@@ -1,0 +1,25 @@
+<ul class="nav nav-pills" style="float: right; padding: 20px; margin-right: 40px;">
+  <li class="active"><%= link_to "Home", :controller => :home, :action => :index %></li>
+  <li><%= link_to "Items", :controller => :items, :action => :index %></li>
+  <li><%= link_to  t('.new', :default => t("helpers.links.new")), new_item_path %></li>
+  <li><%= link_to "Search", :controller => :items, :action => :search %></li>
+  
+</ul>
+
+<center>
+<h4 style="margin-left: 210px;">Some recent posts:</h4>
+<div style="margin-left: 210px; margin-top: 20px;">
+  <table>
+    <tbody style="border: 1px solid #333;">
+      <% @items.each do |item| %>
+        <tr style="border: 1px solid #333;">
+          <td style="font-weight: bold;"><%= item.manufacturer %>&nbsp;</td>
+          <td><%= item.model %>&nbsp;</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br/>
+<button class="btn btn-success"><%= link_to "Items", :controller => :items, :action => :index, :class => 'white_text' %></button>
+</center>

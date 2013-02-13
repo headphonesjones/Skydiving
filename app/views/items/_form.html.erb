@@ -1,0 +1,50 @@
+<%= form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :manufacturer, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :manufacturer, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :model, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :model, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :year, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select(:year, :start_year => 2013, :end_year => 1960, :discard_month => true, :discard_day => true, :include_blank => true) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :new, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :new, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rating, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :rating, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :date_posted, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select(:date_posted, :order => [:day, :month, :year], :discard_hour => true, :discard_minute => true) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :additional_comments, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :additional_comments, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="form-actions" >
+    <%= f.submit nil, :class => 'btn btn-success' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                items_path, :class => 'btn' %>
+  </div>
+<% end %>

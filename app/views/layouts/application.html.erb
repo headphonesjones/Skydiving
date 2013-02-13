@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skydiving</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  
+  <style type="text/css" media="projection">
+     .white_text { color: white !important;}
+  </style>
+</head>
+<body>
+<div id="banner" class="twelve columns">
+  <%= image_tag("banner.jpg", :alt => "Skydive Banner") %>
+</div>
+<div class="twelve columns" style="text-align: center;">
+<h3>Welcome to the Latest and Greatest Skydiving Gear Resale Store</h3>
+<p>We give you the tools to sell, buy, and look up skydiving gear</p>
+</div>
+<%= yield %>
+
+<footer style="position:relative ; top: 100px; left: 300px; width: 600px; text-align: center;"> 
+  <p style="font-size: 8pt;">* We have not been open since 1965, I just thought it sounded cool...Also we can only garuntee you we can help you keep feeling alive, not actually stay alive. Skydiving can be dangerous. Duh.</p>
+</footer>
+</body>
+</html>
